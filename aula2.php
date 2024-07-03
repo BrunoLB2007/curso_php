@@ -56,19 +56,20 @@ echo "A operação escolhida foi $operacao com os valores $valorA e $valorB e o 
 //!= significa diferente//
 echo "<br>";
 //testa se a pessoa pode tirar cnh, tem q ser maior de 18 e ter mais de R$ 1000,00//
-$idadePessoa = 8;
-$dinheiro = 100;
+
+$idadePessoa = 17.999999;
+$dinheiro = 1000;
 echo "<br>";
 echo "Tirador de cnh 2000:";
 echo "<br>";
 if($idadePessoa >= 18 && $dinheiro >=1000){
     echo "Parabéns, você é apto a tirar a cnh";
 }elseif ($idadePessoa <18 && $dinheiro <1000){
-    echo "Você não tem a idade necessária e é pobre";
+    echo "Você não tem a idade necessária e é pobre. Deve ter 1K e ser maior de 18 anos";
 }elseif ($idadePessoa <18){
-    echo "Você é muito jovem";
+    echo "Você é muito jovem, precisa ter 18";
 }elseif ($dinheiro <1000){
-    echo "Você é pobre";
+    echo "Você é pobre, precisa ter 1K";
 }
 
 
