@@ -26,16 +26,34 @@ for ($i=1; $i < 100; $i++){
     }
 }
 
+//colocar em ordem crescente 
+for ($i = 0; $i < count($vetorpar); $i++){
+
+}
+
+//colocar em ordem decrescente 
+for ($i = 0; $i < count($vetorpar); $i++){
+
+}
+
+
+
+
 
 for ($i = 0; $i < count($vetorpar); $i++){
     echo $vetorpar[$i]. ", ";// essa linha percorre o vetor e mostra o que tem em cada célula dele
 }
 
-echo "<br>";
-echo "<br>";
+
 
 for ($i = 0; $i < count($vetorimpar); $i++){
     echo $vetorimpar[$i]. ", ";
 }
 
+
+
+//HAHA agr fudeo 
+//Refazer essa merda toda só que ao contrário!!!! 
+//Agr tem que ser em ordem decrescete 
+// pesquisar por formas de ordenar array 
 
