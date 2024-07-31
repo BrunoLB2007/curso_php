@@ -19,6 +19,7 @@ echo "a soma total dos impares é $somadosimpares <br>";
 
 $somadospares = 0; 
 $somadosimpares = 0;
+$w = 1;
 
 while ($w <= 100 ){ 
 
