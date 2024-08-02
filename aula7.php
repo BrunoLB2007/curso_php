@@ -26,30 +26,31 @@ for ($i=1; $i < 100; $i++){
     }
 }
 
+
+
 //colocar em ordem crescente 
-for ($i = 0; $i < count($vetorpar); $i++){
-
+for ($i = 100; $i >= 0; $i--){
+    echo $vetorpar[$i]. ", ";
 }
-
+echo "<br>";
 //colocar em ordem decrescente 
-for ($i = 0; $i < count($vetorpar); $i++){
-
+for ($i = 100; $i >= 0; $i--){
+    echo $vetorimpar[$i]. ", ";
 }
 
-
-
+echo "<br>";
+echo "<br>";
 
 
 for ($i = 0; $i < count($vetorpar); $i++){
     echo $vetorpar[$i]. ", ";// essa linha percorre o vetor e mostra o que tem em cada célula dele
 }
 
-
+echo "<br>";
 
 for ($i = 0; $i < count($vetorimpar); $i++){
     echo $vetorimpar[$i]. ", ";
 }
-
 
 
 //HAHA agr fudeo 
