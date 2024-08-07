@@ -36,15 +36,18 @@ podems ser isoceles, equilatero ou escaleno
 */
 
 $lado1 = 2;
-$lado2 = 1;
-$lado3 = 1;
+$lado2 = 3;
+$lado3 = 2;
 
 echo "<br>";
 
 if ( $lado1 == $lado2 && $lado2 == $lado3 ){
     echo "triangulo equilátero";
 
-}elseif ($lado1 = $lado2| $lado1 = $lado3| $lado2 = $lado3){
+}elseif ($lado1 == $lado2| $lado1 == $lado3| $lado2 == $lado3){
     echo "triangulo isóceles";
+
+}elseif ($lado1 != $lado2| $lado1 != $lado3| $lado2 != $lado3){
+    echo "triangulo escaleno";
 }
 
