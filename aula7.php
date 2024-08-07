@@ -29,12 +29,12 @@ for ($i=1; $i < 100; $i++){
 
 
 //colocar em ordem crescente 
-for ($i = 100; $i >= 0; $i--){
+for ($i = count($vetorpar); $i >= 0; $i--){
     echo $vetorpar[$i]. ", ";
 }
 echo "<br>";
 //colocar em ordem decrescente 
-for ($i = 100; $i >= 0; $i--){
+for ($i = count($vetorpar); $i >= 0; $i--){
     echo $vetorimpar[$i]. ", ";
 }
 
