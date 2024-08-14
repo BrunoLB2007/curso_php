@@ -32,22 +32,27 @@ Identificar o tipo de triangulo conforme os dados inseridos pelo usuário
 sendo três medidas: $lado1, $lado2, $lado3
 A partir destas 3 medidas efetuar o calculo e informar qual o tipo de triangulo formado pelas medidas 
 
-podems ser isoceles, equilatero ou escaleno 
+podem ser isoceles, equilatero ou escaleno 
 */
 
-$lado1 = 2;
-$lado2 = 3;
-$lado3 = 2;
+$lado1 = 0;
+$lado2 = 0;
+$lado3 = 1;
 
 echo "<br>";
 
-if ( $lado1 == $lado2 && $lado2 == $lado3 ){
-    echo "triangulo equilátero";
+if ($lado1 == 0 || $lado2 == 0 || $lado3 == 0){
+    echo "as medidas não formam um triangulo isoceles, equilatero ou escaleno ";
 
-}elseif ($lado1 == $lado2| $lado1 == $lado3| $lado2 == $lado3){
+}elseif ($lado1 == $lado2|| $lado1 == $lado3|| $lado2 == $lado3){
     echo "triangulo isóceles";
 
-}elseif ($lado1 != $lado2| $lado1 != $lado3| $lado2 != $lado3){
+}elseif ($lado1 != $lado2 && $lado2 != $lado3){
     echo "triangulo escaleno";
-}
 
+}elseif ($lado1 == $lado2 && $lado2 == $lado3){
+
+    echo "triangulo equilatero";
+
+}else 
+    echo "as medidas não formam um triangulo isoceles, equilatero ou escaleno ";
