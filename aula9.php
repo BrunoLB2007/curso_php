@@ -59,21 +59,19 @@ ele deve ser capaz de realizar depósitos, saques e extratos
 echo "SISTEMA BANCARIO<br>insira uma operação ";
 function banco ($operacao, $quantidade){
 
-    $saldo = array(100);
+    $saldo = 100;
 
-    if ( $operacao == "saque "){
-       $saldo[1] - $quantidade;
-        return $saldo[1];
+    if ( $operacao == "saque"){
+      $saldo = $saldo - $quantidade;
 
     }elseif ($operacao == "deposito"){
-        $saldo[1] + $quantidade;
-        return $saldo[1];
+       $saldo = $saldo + $quantidade;
 
     }elseif ($operacao == "extrato"){
-        return  "você tem R$". $saldo [1];
+        return  "você tem R$". $saldo ;
     }
-    return $saldo [1];
+    return $saldo;
 }
 
-echo banco( "extrato", 0);
+echo banco( "saque", 10);
 
