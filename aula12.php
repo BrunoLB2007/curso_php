@@ -45,9 +45,7 @@ class FormatarDados {
     public function addMaskCPF ($texto, $mascara ){ 
         $cpfMascarado = ""; 
         $j = 0; 
-        $this->texto = $texto;
-        $this->mascara = $mascara;
-
+    
         for ($i=0; $i<= strlen($mascara); $i++){
     
             if( $mascara[$i]== "#"){
@@ -62,12 +60,10 @@ class FormatarDados {
         return $cpfMascarado;
     }
 
-    function addmascaraCNPJ (){ 
+    function addmascaraCNPJ ($texto, $mascara){ 
         $cnpjMascarado = ""; 
         $j = 0; 
-        $this->texto = $texto;
-        $this->mascara = $mascara;
-
+    
         for ($i=0; $i<= strlen($mascara); $i++){
     
             if( $mascara[$i]== "#"){
@@ -86,9 +82,7 @@ class FormatarDados {
 
         $telefoneMascarado = ""; 
         $j = 0; 
-        $this->texto = $texto;
-        $this->mascara = $mascara;
-
+    
         for ($i=0; $i<= strlen($mascara); $i++){
     
             if( $mascara[$i]== "#"){
