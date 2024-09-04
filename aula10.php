@@ -96,3 +96,22 @@ function addMaskCPF ($cpf){
 
 echo addMaskCPF("12345678910");
 
+
+function addMaskCNPJ ($cnpj){ 
+    $cnpjMascarado = ""; 
+    $maskcnpj= "##.###.###/####-##";
+    $j = 0; 
+
+    for ($i=0; $i<= strlen($maskcnpj); $i++){
+
+        if( $maskcnpj[$i]== "#"){
+            $cnpjMascarado .= $cnpj[$j];
+            $j++;
+        }else {
+            $cnpjMascarado .= $maskcnpj[$i];
+        }
+    
+    }
+
+    return $cnpjMascarado;
+}
