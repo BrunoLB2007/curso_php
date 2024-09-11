@@ -101,11 +101,11 @@ class FormatarDados {
 
 }
 
-$texto = "5554999912933";
-$mascara = "+## (##) # ####-####";
+$texto = "04542585000";
+$mascara = "###.###.###-##";
 
 $formatarDados = new FormatarDados($texto, $mascara); // instanciar o objeto
-echo $formatarDados->addMask();
+echo $formatarDados->addMask(); // a flechina serve pra literalmente apontar a função que eu quero trabalhar 
 
 
 
