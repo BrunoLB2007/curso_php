@@ -2,35 +2,35 @@
 
 //Criar as operações matemáticas tilizando objetos. +-*/
 
-class Operacoes {
+// class Operacoes {
 
-    public $resultado;
+//     public $resultado;
 
-    public function somar($valor, $valor2){
+//     public function somar($valor, $valor2){
 
-       $this->resultado = $valor += $valor2;
+//        $this->resultado = $valor += $valor2;
 
-    }
+//     }
 
-    public function subtrair($valor, $valor2){
+//     public function subtrair($valor, $valor2){
 
-       $this->resultado = $valor += $valor2;
+//        $this->resultado = $valor += $valor2;
 
-    }
+//     }
 
-    public function dividir($valor, $valor2){
+//     public function dividir($valor, $valor2){
 
-        $this->resultado = $valor/$valor2;
+//         $this->resultado = $valor/$valor2;
 
-    }
+//     }
 
-    public function multiplicar($valor, $valor2){
+//     public function multiplicar($valor, $valor2){
 
-       $this->resultado = $valor*$valor2; 
+//        $this->resultado = $valor*$valor2; 
 
-    }
+//     }
 
-}
+// }
 
 // $operacoes = new Operacoes();
 
@@ -50,7 +50,6 @@ class Banco {
 
     public $saldo = 50;
     public $erro = ""; 
-
 
     public function saque($quantidade){
 
@@ -82,17 +81,16 @@ class Banco {
     public function transferencia($quantidade, $destinatario){
 
         if ($quantidade > $this->saldo || $quantidade <= 0){
+
              $this->erro = "saldo insuficiente ";
+
         }elseif ($destinatario == ""){
 
             $this->erro = "Selecione um destinatário";
 
-    
         }else{
 
             $this->saldo -= $quantidade;
-            $destinatario += $quantidade;
-
         }
 
         return $this->retorno(); 
@@ -110,7 +108,10 @@ class Banco {
 
 }
 $banco = new Banco();
-echo $banco->transferencia(50, "Lucas");
-
-
+echo $banco->transferencia(50,"Lucas");
+echo "<br>";
+echo $banco->deposito(500);
+echo "<br>";
+echo $banco->saque(501);
+echo "<br>".$banco->saldo;
 
