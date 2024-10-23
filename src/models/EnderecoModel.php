@@ -1,53 +1,59 @@
 <?php
 
-require '../database/Conexao.php';
+require_once '../database/Conexao.php';
 
-class UsuarioModel extends BaseModel {
+class EnderecoModel extends BaseModel{
 
-    private $table = 'Usuario';
-    
+    private $table = 'endereco';
+
     private $fields = [
-        'cpf',
-        'email',
-        'senha',
+        'rua',
+        'bairro',
+        'numero',
+        'cep',
+        'complemento',
+        'cidade',
+        'estado',
+        'id_pessoa',
     ];
 
-    public function create($values) {
-
+    public function create ($values){
         $this->createAdjust($this->fields, $values);
 
         $sql = ("INSERT INTO {$this->table} ({$this->fieldsSTR}) VALUES ({$this->valuesSTR});");
-        // INSERT INTO {$this->table} ('cpf','email','senha','excluido') VALUES ('546546654', 'fulanmo@email.com'...)
 
+        return $this->execute($sql);
     }
 
-    public function read($id) {
-        
-        // 'id','excluido','usuario_alteracao','data_criacao','data_atualizacao','cpf','email','senha';
+    public function read ($id){
         $this->readAdjust($this->fields);
 
         // SELECT * FROM Usuario WHERE id = 14;
         $sql = ("SELECT {$this->fieldsSTR} FROM {$this->table} WHERE id = {$id} LIMIT 1;");
+
+        return $this->execute($sql);
     }
 
-    public function readAll($page = 20) {
-        
+    public function readALL($page = 20){
         $this->readAdjust($this->fields);
 
         $sql = ("SELECT {$this->fieldsSTR} FROM {$this->table} LIMIT {$page};");
+
+        return $this->execute($sql);
     }
 
-    public function update($id, array $values) {
-
+    public function update($id, array $values){
         $this->updateAdjust($values);
 
         $sql = ("UPDATE {$this->table} SET $this->fieldsSTR WHERE id = {$id};");
-        // UPDATE USUARIOS SET cpf = '123456', email = 'novoEmail@trallala.com' WHERE id = 1;
 
+        return $this->execute($sql);
     }
 
-    public function delete($id) {
+    public function delete($id){
         $sql = ("DELETE FROM {$this->table} WHERE id = {$id};");
+
+        return $this->execute($sql);
     }
 
 }

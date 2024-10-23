@@ -1,6 +1,6 @@
 <?php
 
-require '../models/UsuarioModel.php';
+require_once '../models/UsuarioModel.php';
 
 class UsuarioController {
 
@@ -22,6 +22,8 @@ class UsuarioController {
         // codigo para validar o cpf
     }
 }
+
+$usuario = new UsuarioController();
 
 
 /*
