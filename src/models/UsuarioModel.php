@@ -22,6 +22,8 @@ class UsuarioModel extends BaseModel {
 
     }
 
+
+
     public function read($id) {
         
         // 'id','excluido','usuario_alteracao','data_criacao','data_atualizacao','cpf','email','senha';
@@ -32,6 +34,8 @@ class UsuarioModel extends BaseModel {
         return $this->execute($sql);
     }
 
+
+
     public function readAll($page = 20) {
         
         $this->readAdjust($this->fields);
@@ -40,22 +44,69 @@ class UsuarioModel extends BaseModel {
         return $this->execute($sql);
     }
 
+
+
     public function update($id, array $values) {
 
         $this->updateAdjust($values);
 
-        $sql = ("UPDATE {$this->table} SET $this->fieldsSTR WHERE id = {$id};");
+        $sql = ("UPDATE {$this->table} SET $this->fieldsSTR WHERE id = '{$id}';");
         // UPDATE USUARIOS SET cpf = '123456', email = 'novoEmail@trallala.com' WHERE id = 1;
         return $this->execute($sql);
 
     }
+
+
 
     public function delete($id) {
         $sql = ("DELETE FROM {$this->table} WHERE id = {$id};");
         return $this->execute($sql);
     }
 
-}
-$usuario = new UsuarioModel();
 
-$dados = $usuario->readAll();
+
+    public function deleteMany($ids) {
+        $ids = implode(",", $ids);
+
+        $sql = ("DELETE FROM {$this->table} WHERE id IN({$ids});");
+
+        return $this->execute($sql);
+    }
+
+}
+
+$ids = [
+    4,
+];
+
+
+
+$usuarioModel = new UsuarioModel();
+
+
+
+$dadosUsuario = [
+    'cpf' => '04545554444' ,
+    'email' => 'emaildo =ome@gmail.com',
+    'senha' => 1234,
+];
+
+$usuarioModel->deleteMany($ids);
+
+
+
+$dados = $usuarioModel->readAll();
+
+
+if (!empty($dados) ){
+
+    foreach ($dados as $idx => $registro) { 
+        
+        foreach($registro as $field => $value){
+            echo "{$field}: {$value} <br>";
+        }
+        echo "<br>";
+    }
+
+
+}

@@ -1,6 +1,6 @@
 <?php 
 
-require_once './src/database/Conexao.php';
+require_once './BaseModel.php';
 
 global $conexao;
 

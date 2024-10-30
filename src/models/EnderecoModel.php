@@ -1,6 +1,6 @@
 <?php
 
-require_once '../database/Conexao.php';
+require_once './BaseModel.php';
 
 class EnderecoModel extends BaseModel{
 
